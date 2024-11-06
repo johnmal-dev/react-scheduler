@@ -89,11 +89,11 @@ export type SchedulerProjectData = {
   /**
    * Represents start date of from which tile will render
    */
-  startDate: Date;
+  startDate: Date | null;
   /**
    * Represents end date to which tile will render
    */
-  endDate: Date;
+  endDate: Date | null;
   /**
    * Indicates how much time is spent per day. Given in seconds and converted by Scheduler to hours/minutes
    */
