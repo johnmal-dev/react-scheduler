@@ -64,6 +64,7 @@ export type SchedulerRow = {
   id: string;
   label: SchedulerRowLabel;
   data: SchedulerProjectData[];
+  isGenerated?: boolean;
 };
 
 export type SchedulerItemClickData = Omit<SchedulerRow, "data">;
@@ -114,6 +115,11 @@ export type SchedulerProjectData = {
    * Background color of the tile, given in rgb color model. If not given, default color (rgb(114, 141,226 )) is set. Optional
    */
   bgColor?: string;
+
+  /**
+   * Indicates if item is generated. Optional
+   */
+  isGenerated?: boolean;
 };
 
 export type Day = {

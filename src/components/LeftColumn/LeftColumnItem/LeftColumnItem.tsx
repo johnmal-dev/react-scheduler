@@ -10,7 +10,8 @@ import {
 } from "./styles";
 import { LeftColumnItemProps } from "./types";
 
-const LeftColumnItem: FC<LeftColumnItemProps> = ({ id, item, rows, onItemClick }) => {
+const LeftColumnItem: FC<LeftColumnItemProps> = ({ id, item, rows, onItemClick, data }) => {
+  const isGenerated = data.some((project) => project.some((item) => item.isGenerated));
   return (
     <StyledWrapper
       title={item.title + " | " + item.subtitle}
@@ -26,7 +27,9 @@ const LeftColumnItem: FC<LeftColumnItemProps> = ({ id, item, rows, onItemClick }
           )}
         </StyledImageWrapper>
         <StyledTextWrapper>
-          <StyledText isMain>{item.title}</StyledText>
+          <StyledText isMain>
+            {item.title} {isGenerated && " (Generated)"}
+          </StyledText>
           <StyledText>{item.subtitle}</StyledText>
         </StyledTextWrapper>
       </StyledInnerWrapper>
