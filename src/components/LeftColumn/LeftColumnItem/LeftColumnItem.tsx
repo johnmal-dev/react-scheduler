@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { Icon } from "@/components";
 import {
+  StyledAbsoluteWrapper,
   StyledImage,
   StyledImageWrapper,
   StyledInnerWrapper,
@@ -10,7 +11,8 @@ import {
 } from "./styles";
 import { LeftColumnItemProps } from "./types";
 
-const LeftColumnItem: FC<LeftColumnItemProps> = ({ id, item, rows, onItemClick }) => {
+const LeftColumnItem: FC<LeftColumnItemProps> = ({ id, item, rows, onItemClick, data }) => {
+  const isGenerated = data.some((project) => project.some((item) => item.isGenerated));
   return (
     <StyledWrapper
       title={item.title + " | " + item.subtitle}
@@ -30,6 +32,7 @@ const LeftColumnItem: FC<LeftColumnItemProps> = ({ id, item, rows, onItemClick }
           <StyledText>{item.subtitle}</StyledText>
         </StyledTextWrapper>
       </StyledInnerWrapper>
+      {isGenerated && <StyledAbsoluteWrapper>Generated</StyledAbsoluteWrapper>}
     </StyledWrapper>
   );
 };

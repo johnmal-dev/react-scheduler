@@ -64,6 +64,7 @@ export type SchedulerRow = {
   id: string;
   label: SchedulerRowLabel;
   data: SchedulerProjectData[];
+  isGenerated?: boolean;
 };
 
 export type SchedulerItemClickData = Omit<SchedulerRow, "data">;
@@ -89,11 +90,11 @@ export type SchedulerProjectData = {
   /**
    * Represents start date of from which tile will render
    */
-  startDate: Date;
+  startDate: Date | null;
   /**
    * Represents end date to which tile will render
    */
-  endDate: Date;
+  endDate: Date | null;
   /**
    * Indicates how much time is spent per day. Given in seconds and converted by Scheduler to hours/minutes
    */
@@ -114,6 +115,11 @@ export type SchedulerProjectData = {
    * Background color of the tile, given in rgb color model. If not given, default color (rgb(114, 141,226 )) is set. Optional
    */
   bgColor?: string;
+
+  /**
+   * Indicates if item is generated. Optional
+   */
+  isGenerated?: boolean;
 };
 
 export type Day = {

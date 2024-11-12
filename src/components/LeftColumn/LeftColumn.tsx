@@ -51,6 +51,7 @@ const LeftColumn: FC<LeftColumnProps> = ({
           key={item.id}
           rows={rows[index]}
           onItemClick={onItemClick}
+          data={item.data}
         />
       ))}
       <PaginationButton

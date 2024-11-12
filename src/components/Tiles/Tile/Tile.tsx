@@ -16,6 +16,13 @@ import { TileProps } from "./types";
 const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick }) => {
   const { date } = useCalendar();
   const datesRange = getDatesRange(date, zoom);
+
+  const { colors } = useTheme();
+
+  if (!data.startDate || !data.endDate) {
+    return null;
+  }
+
   const { y, x, width } = getTileProperties(
     row,
     datesRange.startDate,
@@ -24,8 +31,6 @@ const Tile: FC<TileProps> = ({ row, data, zoom, onTileClick }) => {
     data.endDate,
     zoom
   );
-
-  const { colors } = useTheme();
 
   return (
     <StyledTileWrapper

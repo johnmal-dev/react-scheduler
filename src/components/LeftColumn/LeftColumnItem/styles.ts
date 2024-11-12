@@ -3,6 +3,7 @@ import { boxHeight } from "@/constants";
 import { StyledLeftColumnItemWrapperProps, StyledTextProps } from "./types";
 
 export const StyledWrapper = styled.div<StyledLeftColumnItemWrapperProps>`
+  position: relative;
   display: flex;
   align-items: ${({ rows }) => (rows > 1 ? "start" : "center")};
   padding: 0.813rem 0 0.813rem 1rem;
@@ -53,4 +54,16 @@ export const StyledText = styled.p<StyledTextProps>`
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
+`;
+
+export const StyledAbsoluteWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: rgb(239, 246, 255);
+  padding: 0.125rem 0.25rem;
+  color: rgb(37, 99, 235);
+  font-size: 0.625rem;
+  line-height: 0.75rem;
+  border-radius: 0.25rem 0 0 0;
 `;
