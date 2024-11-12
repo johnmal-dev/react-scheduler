@@ -1,5 +1,5 @@
 {
-  "name": "@bitnoi.se/react-scheduler",
+  "name": "@frankyfrank/react-scheduler-fork",
   "version": "0.3.0",
   "type": "module",
   "license": "MIT",
@@ -16,7 +16,7 @@
     "calendar"
   ],
   "author": {
-    "name": "Bitnoise",
+    "name": "FrankyFrank",
     "url": "https://scheduler.bitnoise.pl/"
   },
   "scripts": {
